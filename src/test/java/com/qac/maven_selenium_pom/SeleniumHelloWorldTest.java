@@ -1,31 +1,32 @@
 package com.qac.maven_selenium_pom;
 
-		import java.io.IOException;
+import java.io.IOException;
 
-		import com.qac.maven_selenium_pom.logging.LogHelper;
-		import org.apache.logging.log4j.LogManager;
-		import org.apache.logging.log4j.Logger;
-		import org.junit.jupiter.api.AfterAll;
-		import org.junit.jupiter.api.AfterEach;
-		import org.junit.jupiter.api.BeforeAll;
-		import org.junit.jupiter.api.BeforeEach;
-		import org.junit.jupiter.api.Test;
+import com.qac.maven_selenium_pom.logging.LogHelper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-		import com.qac.maven_selenium_pom.pageobjects.LoginPage;
-		import com.qac.maven_selenium_pom.selenium.SeleniumHelper;
-		import com.qac.maven_selenium_pom.utilities.Utils;
-		import com.qac.maven_selenium_pom.config.Log4j2Config;
+import com.qac.maven_selenium_pom.pageobjects.LoginPage;
+import com.qac.maven_selenium_pom.selenium.SeleniumHelper;
+import com.qac.maven_selenium_pom.utilities.Utils;
+import com.qac.maven_selenium_pom.config.Log4j2Config;
 
 class SeleniumHelloWorldTest {
 
 	private String username = "standard_user";
 	private String password = "secret_sauce";
 
-	private static final Logger logger = LogManager.getLogger(LogHelper.class);
+	private static Logger logger;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		Log4j2Config.configure();
+		logger = LogManager.getLogger(LogHelper.class); // Initialized here so it includes the configs
 		Utils.getRunTimeStamp();
 		logger.info("Starting test execution");
 	}
