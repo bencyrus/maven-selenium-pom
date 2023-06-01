@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.qac.maven_selenium_pom.SeleniumHelloWorldTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.439 s <<< FAILURE! - in com.qac.maven_selenium_pom.SeleniumHelloWorldTest
+test  Time elapsed: 0.087 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: true did not equal true ==> expected: <true> but was: <false>
+	at com.qac.maven_selenium_pom.SeleniumHelloWorldTest.test(SeleniumHelloWorldTest.java:38)
+
