@@ -22,10 +22,10 @@ public class LogHelper {
         logger.fatal("Fatal: " + message);
     }
 
-//    public static void main(String[] args) {
-//        logInfo("This is an info message");
-//        logWarn("This is a warning message");
-//        logError("This is an error message");
-//        logFatal("This is a fatal message");
-//    }
+    public static void main(String[] args) {
+        logInfo("This is an info message");
+        logWarn("This is a warning message");
+        logError("This is an error message");
+        logFatal("This is a fatal message");
+    }
 }

@@ -14,6 +14,7 @@ package com.qac.maven_selenium_pom;
 		import com.qac.maven_selenium_pom.pageobjects.LoginPage;
 		import com.qac.maven_selenium_pom.selenium.SeleniumHelper;
 		import com.qac.maven_selenium_pom.utilities.Utils;
+		import com.qac.maven_selenium_pom.config.Log4j2Config;
 
 class SeleniumHelloWorldTest {
 
@@ -24,6 +25,7 @@ class SeleniumHelloWorldTest {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+		Log4j2Config.configure();
 		Utils.getRunTimeStamp();
 		logger.info("Starting test execution");
 	}
