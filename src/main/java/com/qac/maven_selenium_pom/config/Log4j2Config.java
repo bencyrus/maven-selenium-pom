@@ -37,7 +37,25 @@ public class Log4j2Config {
                 .add(standardLayout);
         builder.add(fileAppender);
 
-        // Create and add a new logger
+        // Create a layout for steps
+        LayoutComponentBuilder stepsLayout = builder.newLayout("PatternLayout")
+                .addAttribute("pattern", "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n");
+
+        // Generate dynamic filename for steps
+        String stepsFileName = "logs/steps/" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss")) + ".log";
+
+        // Create and add a file appender for steps
+        AppenderComponentBuilder stepsFileAppender = builder.newAppender("StepsFileLogger", "File")
+                .addAttribute("fileName", stepsFileName)
+                .add(stepsLayout);
+        builder.add(stepsFileAppender);
+
+        // Create and add a new logger for steps
+        builder.add(builder.newLogger("StepsLogger", Level.INFO)
+                .add(builder.newAppenderRef("StepsFileLogger"))
+                .addAttribute("additivity", false));  // Do not inherit appenders from root logger
+
+        // Create and add a new root logger
         builder.add(builder.newRootLogger(Level.TRACE)
                 .add(builder.newAppenderRef("Console"))
                 .add(builder.newAppenderRef("FileLogger")));

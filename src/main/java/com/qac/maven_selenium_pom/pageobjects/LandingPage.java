@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 
+import com.qac.maven_selenium_pom.logging.StepLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,8 +25,7 @@ public class LandingPage {
 	private String productPricePartTwo = "')]//ancestor::div[@class='inventory_item_description']//descendant::div[@class = 'inventory_item_price']";;
 
 	public LandingPage VerifyPrice(String _product, String _expectedPrice) throws IOException {
-		
-		System.out.println("Verifying " + _product + " has price: " + _expectedPrice);
+		StepLogger.logStep("Verifying " + _product + " has price: " + _expectedPrice);
 		
 		String xpath = productPricePartOne + _product + productPricePartTwo;
 		String loc_productLabel = productPricePartOne + _product + "')]";
@@ -41,9 +41,8 @@ public class LandingPage {
 		
 		String message = "Price for product: " + _product + " was incorrect. Expected: " + _expectedPrice + " and found: " + actualPrice;
 		assertEquals(_expectedPrice, actualPrice, message);
-		
-		System.out.println("finished Verifying price");
-		
+
+		StepLogger.logStep("Finished verifying Price");
 		return LandingPage.getInstance();
 	}
 	

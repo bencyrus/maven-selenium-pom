@@ -1,0 +1,11 @@
+10:34:26.627 [main] INFO  StepsLogger - Step: Sending keys: 'standard_user' to element: id: user-name]
+10:34:26.734 [main] INFO  StepsLogger - Step: finished sending keys
+10:34:26.739 [main] INFO  StepsLogger - Step: Sending keys: 'secret_sauce' to element: id: password]
+10:34:26.763 [main] INFO  StepsLogger - Step: finished sending keys
+10:34:26.770 [main] INFO  StepsLogger - Step: Clicking element: id: login-button]
+10:34:26.810 [main] INFO  StepsLogger - Step: finished clicking
+10:34:29.818 [main] INFO  StepsLogger - Step: Verifying Sauce Labs Backpack has price: $29.99
+10:34:29.864 [main] INFO  StepsLogger - Step: Verifying Sauce Labs Bike Light has price: $9.99
+10:34:29.881 [main] INFO  StepsLogger - Step: Verifying Sauce Labs Bolt T-Shirt has price: $15.99
+10:34:29.896 [main] INFO  StepsLogger - Step: Verifying Sauce Labs Fleece Jacket has price: $9.99
+10:34:30.146 [main] INFO  StepsLogger - Step: Screenshot with error saved to /Users/bencyrus/Programming/QAC/maven-selenium-pom/./screenshots/2023-06-02 10-34-23/2023-06-02 10-34-30.png

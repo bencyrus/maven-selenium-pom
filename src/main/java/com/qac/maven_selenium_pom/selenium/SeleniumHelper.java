@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import com.qac.maven_selenium_pom.logging.StepLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -62,7 +63,7 @@ public class SeleniumHelper {
 		String ssTimeStamp = Utils.getTimestamp();
 		File screenshotFile=new File("./screenshots/" + runTimeStamp + "/" + ssTimeStamp + ".png");
 		FileUtils.copyFile(screenshot, screenshotFile);
-		System.out.println("screesnhot with error saved to " + screenshotFile.getAbsoluteFile());
+		StepLogger.logStep("Screenshot with error saved to " + screenshotFile.getAbsoluteFile());
 	}
 	
 	public static WebElement findElement(By _locator)
@@ -77,27 +78,27 @@ public class SeleniumHelper {
 	}
 	
 	public static void click(By _locator) {
-		System.out.println("Clicking element by locator: " + _locator);
+		StepLogger.logStep("Clicking element by locator: " + _locator);
 		findElement(_locator).click();
-		System.out.println("finished clicking");
+		StepLogger.logStep("finished clicking");
 	}
 	
 	public static void click(WebElement _element) {
-		System.out.println("Clicking element: " + formatElementString(_element.toString()));
+		StepLogger.logStep("Clicking element: " + formatElementString(_element.toString()));
 		_element.click();
-		System.out.println("finished clicking");
+		StepLogger.logStep("finished clicking");
 	}
 	
 	public static void sendKeys(By _locator, String _keys) {
-		System.out.println("Sending keys: '" + _keys + "' to element with locator: " + _locator);
+		StepLogger.logStep("Sending keys: '" + _keys + "' to element with locator: " + _locator);
 		findElement(_locator).sendKeys(_keys);
-		System.out.println("finished sending keys");
+		StepLogger.logStep("finished sending keys");
 	}
 	
 	public static void sendKeys(WebElement _element, String _keys) {
-		System.out.println("Sending keys: '" + _keys + "' to element: " + formatElementString(_element.toString()));
+		StepLogger.logStep("Sending keys: '" + _keys + "' to element: " + formatElementString(_element.toString()));
 		_element.sendKeys(_keys);
-		System.out.println("finished sending keys");
+		StepLogger.logStep("finished sending keys");
 	}
 	
 	private static String formatElementString(String _elementString) {
