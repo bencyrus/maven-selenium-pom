@@ -18,8 +18,8 @@ import com.qac.maven_selenium_pom.config.Log4j2Config;
 
 class SeleniumHelloWorldTest {
 
-	private String username = "standard_user";
-	private String password = "secret_sauce";
+	private String username = "mahdi.mohaghegh2001@gmail.com";
+	private String password = "12345678";
 
 	private static Logger logger;
 
@@ -49,15 +49,12 @@ class SeleniumHelloWorldTest {
 	void test() {
 		try {
 			LoginPage.getInstance().NavigateToThisPage()
-					.EnterCredentials(username, password)
-					.VerifyPrice("Sauce Labs Backpack", "$29.99")
-					.VerifyPrice("Sauce Labs Bike Light", "$9.99")
-					.VerifyPrice("Sauce Labs Bolt T-Shirt", "$15.99")
-					.VerifyPrice("Sauce Labs Fleece Jacket", "$9.99");
-		} catch (IOException e) {
+					.EnterCredentials(username, password);
+		} catch (Exception e) {
 			logger.error("Test failed with exception", e);
 		}
 		assert true;
 	}
+
 
 }

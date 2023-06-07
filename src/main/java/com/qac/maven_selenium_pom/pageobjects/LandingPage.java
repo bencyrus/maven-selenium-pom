@@ -8,14 +8,13 @@ import com.qac.maven_selenium_pom.logging.StepLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.qac.maven_selenium_pom.selenium.SeleniumHelper;
 
 
 public class LandingPage {
 
-	private String url = "https://www.saucedemo.com/";
+	private String url = "https://demowebshop.tricentis.com/";
 	
 	//static instances
 	private static LandingPage m_instance = null;

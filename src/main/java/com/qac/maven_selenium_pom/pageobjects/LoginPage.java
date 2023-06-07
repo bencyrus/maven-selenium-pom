@@ -9,49 +9,55 @@ import com.qac.maven_selenium_pom.selenium.SeleniumHelper;
 
 public class LoginPage {
 
-	private String url = "https://www.saucedemo.com/";
-	
+	private String url = "https://demowebshop.tricentis.com/login";
+
 	//static instances
 	private static LoginPage m_instance = null;
 	private static WebDriver m_driver = null;
-	
-	@FindBy(id = "user-name")
+
+	@FindBy(id = "Email")
 	WebElement usernameField;
-	
-	@FindBy(id = "password")
+
+	@FindBy(id = "Password")
 	WebElement passwordField;
-	
-	@FindBy(id = "login-button")
+
+	@FindBy(css = "input.button-1.login-button")
 	WebElement loginButton;
-	
+
 	public LoginPage NavigateToThisPage() {
 		m_driver.get(url);
 		return LoginPage.getInstance();
 	}
-	
-	public LandingPage EnterCredentials(String _username, String _password) {
+
+	public HomePage EnterCredentials(String _username, String _password) {
+		usernameField.clear();
 		SeleniumHelper.sendKeys(usernameField, _username);
+
+		passwordField.clear();
 		SeleniumHelper.sendKeys(passwordField, _password);
+
 		SeleniumHelper.click(loginButton);
 		SeleniumHelper.Seconds(3);
-		return LandingPage.getInstance();
+
+		return HomePage.getInstance();
 	}
-	
-	
+
+
+
 	//Constructor and Singleton implementation
-	
+
 	private LoginPage() {
 		m_driver = SeleniumHelper.getDriver();
 		PageFactory.initElements(m_driver, this);
 	}
-	
+
 	public static LoginPage getInstance() {
-		
+
 		if(m_instance == null)
 		{
 			m_instance = new LoginPage();
 		}
-		
+
 		return m_instance;
 	}
 }

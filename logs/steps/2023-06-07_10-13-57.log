@@ -1,0 +1,12 @@
+10:14:01.678 [main] INFO  StepsLogger - Step: Sending keys: 'incorrectUsername' to element: id: Email]
+10:14:01.749 [main] INFO  StepsLogger - Step: finished sending keys
+10:14:01.767 [main] INFO  StepsLogger - Step: Sending keys: 'incorrectPassword' to element: id: Password]
+10:14:01.797 [main] INFO  StepsLogger - Step: finished sending keys
+10:14:01.802 [main] INFO  StepsLogger - Step: Clicking element: css selector: input.button-1.login-button]
+10:14:01.826 [main] INFO  StepsLogger - Step: finished clicking
+10:14:05.210 [main] INFO  StepsLogger - Step: Sending keys: 'jskuce@test.com' to element: id: Email]
+10:14:05.234 [main] INFO  StepsLogger - Step: finished sending keys
+10:14:05.251 [main] INFO  StepsLogger - Step: Sending keys: 'jskuce123' to element: id: Password]
+10:14:05.276 [main] INFO  StepsLogger - Step: finished sending keys
+10:14:05.279 [main] INFO  StepsLogger - Step: Clicking element: css selector: input.button-1.login-button]
+10:14:05.783 [main] INFO  StepsLogger - Step: finished clicking
