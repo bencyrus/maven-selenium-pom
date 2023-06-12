@@ -2,7 +2,7 @@ package com.qac.maven_selenium_pom;
 
 import com.qac.maven_selenium_pom.logging.LogHelper;
 import com.qac.maven_selenium_pom.pageobjects.HomePage;
-import com.qac.maven_selenium_pom.pageobjects.LoginPage;
+import com.qac.maven_selenium_pom.pageobjects.RegisterPage;
 import com.qac.maven_selenium_pom.selenium.SeleniumHelper;
 import com.qac.maven_selenium_pom.utilities.Utils;
 import com.qac.maven_selenium_pom.config.Log4j2Config;
@@ -18,10 +18,12 @@ import org.openqa.selenium.By;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ExistingUserLoginTest {
+class RegisterUserTest {
 
-    private String username = "jskuce@test.com";
-    private String password = "jskuce123";
+    private String firstName = "Tom";
+    private String lastName = "Wambsgans";
+    private String email = "twambsgans" + System.currentTimeMillis() + "@atn.com";
+    private String password = "neroandsporus";
 
     private static Logger logger;
 
@@ -48,38 +50,19 @@ class ExistingUserLoginTest {
     }
 
     @Test
-    void unsuccessful_login_with_incorrect_credentials() {
+    void register_new_user() {
         try {
-            String incorrectUsername = "incorrectUsername";
-            String incorrectPassword = "incorrectPassword";
-
-            logger.info("Navigating to Login Page and trying to log in with incorrect credentials");
-            LoginPage.getInstance()
+            logger.info("Navigating to Register Page and trying to register with firstName: " + firstName + ", lastName: " + lastName + ", email: " + email);
+            RegisterPage.getInstance()
                     .NavigateToThisPage()
-                    .EnterCredentials(incorrectUsername, incorrectPassword)
-                    .validateErrorMessage("Login was unsuccessful. Please correct the errors and try again.");
-
-            logger.info("Error message verified successfully");
-
-        } catch (Exception e) {
-            logger.error("Test failed with exception", e);
-        }
-    }
-
-    @Test
-    void existing_user_login() {
-        try {
-            logger.info("Navigating to Login Page and trying to log in with username: " + username);
-            LoginPage.getInstance()
-                    .NavigateToThisPage()
-                    .EnterCredentials(username, password);
+                    .Register(firstName, lastName, email, password);
 
             HomePage homePage = HomePage.getInstance();
 
-            logger.info("Logged in. Verifying that the correct user's email is displayed in the header.");
+            logger.info("Registered. Verifying that the correct user's email is displayed in the header.");
             // Verify that the correct user's email is displayed in the header
             String accountEmail = homePage.getAccountEmail();
-            assertEquals(accountEmail, username, "Account email does not match the logged in user email");
+            assertEquals(accountEmail, email, "Account email does not match the registered user email");
 
             logger.info("User's email verified successfully");
 

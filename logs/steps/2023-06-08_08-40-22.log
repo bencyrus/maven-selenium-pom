@@ -1,0 +1,12 @@
+08:40:25.696 [main] INFO  StepsLogger - Step: Sending keys: 'Tom' to element: id: FirstName]
+08:40:25.783 [main] INFO  StepsLogger - Step: finished sending keys
+08:40:25.789 [main] INFO  StepsLogger - Step: Sending keys: 'Wambsgans' to element: id: LastName]
+08:40:25.813 [main] INFO  StepsLogger - Step: finished sending keys
+08:40:25.819 [main] INFO  StepsLogger - Step: Sending keys: 'twambsgans1686228022279@atn.com' to element: id: Email]
+08:40:25.845 [main] INFO  StepsLogger - Step: finished sending keys
+08:40:25.851 [main] INFO  StepsLogger - Step: Sending keys: 'neroandsporus' to element: id: Password]
+08:40:25.877 [main] INFO  StepsLogger - Step: finished sending keys
+08:40:25.884 [main] INFO  StepsLogger - Step: Sending keys: 'neroandsporus' to element: id: ConfirmPassword]
+08:40:25.907 [main] INFO  StepsLogger - Step: finished sending keys
+08:40:25.915 [main] INFO  StepsLogger - Step: Clicking element: css selector: input[type='submit']]
+08:40:25.955 [main] INFO  StepsLogger - Step: finished clicking

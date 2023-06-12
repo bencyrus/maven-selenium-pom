@@ -1,0 +1,4 @@
+08:41:13.681 [main] INFO  StepsLogger - Step: Sending keys: 'laptop' to element: id: small-searchterms]
+08:41:13.756 [main] INFO  StepsLogger - Step: finished sending keys
+08:41:13.762 [main] INFO  StepsLogger - Step: Clicking element: css selector: input[value='Search']]
+08:41:14.594 [main] INFO  StepsLogger - Step: finished clicking
